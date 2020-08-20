@@ -31,8 +31,10 @@ export default {
    //...mapActions(['saveDbSource']),
     click(){
       //点击一个按钮向store中保存一些数据
-      // this.$store.commit('saveCurrDbSource',this.db);
-      this.$store.dispatch('state/saveDbSource', this.db);
+      //.commt    调用的是mutations中的方法
+      //.dispatch 调用的是actions中的方法
+      this.$store.commit('saveCurrDbSource',this.db);
+      this.$store.dispatch('saveCurrDbSource', this.db);
       //this.saveDbSource;
       alert(this.$store.state.currDbSource);
     },

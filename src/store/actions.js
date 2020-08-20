@@ -5,7 +5,7 @@ export const savePath = ({ commit }, payload) => {
  
 // 触发获取当前点击的数据源方法
 export const saveCurrDbSource = ({ commit }, payload) => {
-  commit('store/saveCurrDbSource', payload);
+  commit('saveCurrDbSource', payload);
 };
  
 // 触发获取当前点击的元数据方法
