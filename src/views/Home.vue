@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
@@ -17,15 +18,18 @@ export default {
   },
   data(){
     return({
-    db: 0
-
+    db: 0,
+    DbSource: 1
     })
   },
   methods:{
+   //...mapActions(['saveDbSource']),
     click(){
       //点击一个按钮向store中保存一些数据
-      this.$store.commit('saveCurrJobSource',this.db);
-      alert(this.$store.state.currDbsource);
+      this.$store.commit('saveCurrDbSource',this.db);
+      this.$store.dispatch('saveDbSource', this.DbSource);
+      //this.saveDbSource;
+      alert(this.$store.state.currDbSource);
     }
   }
 }
